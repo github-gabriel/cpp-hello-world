@@ -21,11 +21,13 @@ public:
 
     std::string getName() const; // const, da nichts verändert wird
     float getKontostand() const; // const, da nichts verändert wird
+    Bank& getBank(); // Referenz zurückgeben, keine Kopie
     void setKontostand(float betrag);
     bool verify();
-    Bank& getBank(); // Referenz zurückgeben, keine Kopie
     void changeBank(Bank *bank_);
     std::string toString();
+
+    void ueberweisen(Kunde& kunde2, float betrag);
 };
 
 #endif //BANK_KUNDE_HPP
